@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
 import { addTodo } from '../api/todo';
 import ErrorMessage from './ErrorMessage';
@@ -13,7 +14,8 @@ const AddTodo = () => {
 		},
 	});
 
-	const addHandler = () => {
+	const addHandler = (e: ChangeEvent<HTMLFormElement>) => {
+		e.preventDefault();
 		mutate({
 			id: Date.now(),
 			title: 'New Test',
