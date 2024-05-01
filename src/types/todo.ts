@@ -6,6 +6,7 @@ export type TodoType = {
 };
 
 export type AddTodoType = {
+	userId: number;
 	title: string;
 	completed: boolean;
 	id: number;

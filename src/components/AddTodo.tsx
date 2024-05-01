@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
 import { addTodo } from '../api/todo';
 import ErrorMessage from './ErrorMessage';
@@ -7,6 +7,7 @@ import SuccessMessage from './SuccessMessage';
 
 const AddTodo = () => {
 	const queryClient = useQueryClient();
+	const [inputValue, setInputValue] = useState('');
 
 	const { mutate, isLoading, isSuccess, isError } = useMutation(addTodo, {
 		onSuccess: () => {
@@ -17,8 +18,9 @@ const AddTodo = () => {
 	const addHandler = (e: ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		mutate({
+			userId: 1,
 			id: Date.now(),
-			title: 'New Test',
+			title: inputValue,
 			completed: false,
 		});
 	};
@@ -31,6 +33,7 @@ const AddTodo = () => {
 			<input
 				required
 				type="text"
+				onChange={(e) => setInputValue(e.target.value)}
 			/>
 			<button
 				className="add-btn"

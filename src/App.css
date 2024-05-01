@@ -73,6 +73,7 @@ main.app-main {
 	display: flex;
 	input {
 		border: 2px solid #dfdfdf;
+		padding: 6px;
 		border-radius: 4px;
 	}
 	gap: 4px;
