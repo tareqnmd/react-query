@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { addTodo } from '../api/todo';
 import ErrorMessage from './ErrorMessage';
+import LoadingMessage from './LoadingMessage';
 import SuccessMessage from './SuccessMessage';
 
 const AddTodo = () => {
@@ -31,6 +32,7 @@ const AddTodo = () => {
 			</button>
 			{isSuccess ? <SuccessMessage message="Successfully Added" /> : ''}
 			{isError ? <ErrorMessage message="Error Found" /> : ''}
+			{isLoading ? <LoadingMessage message="Loading" /> : ''}
 		</>
 	);
 };

@@ -38,6 +38,7 @@ main.app-main {
 	padding: 6px 12px;
 	border-radius: 4px;
 	color: white;
+	width: max-content;
 }
 
 .error-message {
@@ -45,6 +46,15 @@ main.app-main {
 	padding: 6px 12px;
 	border-radius: 4px;
 	color: white;
+	width: max-content;
+}
+
+.loading-message {
+	background-color: #42b672;
+	padding: 6px 12px;
+	border-radius: 4px;
+	color: white;
+	width: max-content;
 }
 
 .todo-list {
