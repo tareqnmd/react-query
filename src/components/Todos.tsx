@@ -1,13 +1,15 @@
 import { useQuery } from 'react-query';
 import { fetchTodos } from '../api/todo';
 import { TodoType } from '../types/todo';
+import ErrorMessage from './ErrorMessage';
+import Skeleton from './Skeleton';
 
 const Todos = () => {
 	const { data, isLoading, isError, isSuccess } = useQuery('todos', fetchTodos);
 	if (isLoading) {
-		return 'Loading...';
+		return <Skeleton />;
 	} else if (isError) {
-		return 'Error';
+		return <ErrorMessage message="Error Found!" />;
 	} else if (isSuccess) {
 		return (
 			<ul className="todo-list">

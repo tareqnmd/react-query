@@ -22,18 +22,24 @@ const AddTodo = () => {
 	};
 
 	return (
-		<>
+		<form
+			onSubmit={addHandler}
+			className="action-area"
+		>
+			<input
+				required
+				type="text"
+			/>
 			<button
 				className="add-btn"
 				disabled={isLoading}
-				onClick={addHandler}
 			>
 				Add Todo
 			</button>
 			{isSuccess ? <SuccessMessage message="Successfully Added" /> : ''}
 			{isError ? <ErrorMessage message="Error Found" /> : ''}
 			{isLoading ? <LoadingMessage message="Loading" /> : ''}
-		</>
+		</form>
 	);
 };
 
