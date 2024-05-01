@@ -9,3 +9,52 @@ html {
 	padding: 0;
 }
 
+main.app-main {
+	max-width: 1200px;
+	width: calc(100% - 20px);
+	margin: auto;
+	display: grid;
+	gap: 4px;
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 6px 0;
+	}
+}
+
+.add-btn {
+	width: max-content;
+	background: #000;
+	padding: 10px 18px;
+	border-radius: 4px;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+.success-message {
+	background-color: #186e24;
+	padding: 6px 12px;
+	border-radius: 4px;
+	color: white;
+}
+
+.error-message {
+	background-color: #d22121;
+	padding: 6px 12px;
+	border-radius: 4px;
+	color: white;
+}
+
+.todo-list {
+	margin-top: 20px;
+	list-style: none;
+	display: grid;
+	gap: 4px;
+	li {
+		background: #dfdfdf;
+		padding: 6px;
+		border-radius: 4px;
+	}
+}

@@ -1,7 +1,12 @@
-import axios from 'axios';
+import { AddTodoType } from '../types/todo';
+import { axiosInstance } from './instance';
 
 export const fetchTodos = async () => {
-	const data = await axios.get('https://jsonplaceholder.typicode.com/todos');
-	console.log('data', data);
+	const { data } = await axiosInstance.get('/todos');
+	return data;
+};
+
+export const addTodo = async (payload: AddTodoType) => {
+	const { data } = await axiosInstance.post('/todos', payload);
 	return data;
 };
